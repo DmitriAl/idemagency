@@ -1,0 +1,549 @@
+/********* IndexPage *********/
+
+body {
+    background-color: #E5E5E5;
+}
+
+div,
+article,
+main,
+p,
+ul,
+picture {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    font-family: Roboto;
+    background-color: #fff;
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 768px;
+}
+
+.static {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    line-height: 20px;
+    color: #000;
+    background-color: #C4C4C4;
+    padding: 35px 0;
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.tile {
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+    margin: 5px;
+    padding: 15px;
+    width: 155px;
+    min-height: 155px;
+
+    &--fullsize {
+        width: 100%;
+    }
+
+    &--lightgray {
+        background-color: #E8EBED;
+    }
+
+    &--lightblue {
+        background-color: #90BCE8;
+    }
+
+    &--mustard {
+        background-color: #FEBF26;
+    }
+
+    &--darkgray {
+        color: #fff;
+        background-color: #A2A9B7;
+    }
+
+    &--palered {
+        background-color: #FFAA87;
+    }
+
+    &--palepurple {
+        background-color: #C7ABD4;
+    }
+
+    &--cherry {
+        background-color: #F55E62;
+    }
+
+    &--salad {
+        background-color: #E3EBD3;
+    }
+
+}
+
+.box {
+    display: flex;
+    margin: 5px;
+    width: 100%;
+
+    &__vertical {
+        flex-grow: 1;
+        width: 102.25px;
+        max-width: 241px;
+    }
+
+    &__item {
+        width: 100%;
+        min-height: 0;
+        margin: 0;
+    }
+}
+
+.square {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 0;
+
+    &:after {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+    &__content {
+        position: absolute;
+        box-sizing: border-box;
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.thought {
+    flex-grow: 2;
+    width: 211.15px;
+    margin-right: 6.75px;
+
+    &__text {
+        font-size: 18px;
+        line-height: 26px;
+        text-align: center;
+        overflow-x: hidden;
+        min-height: 100%;
+        padding: 20px 10px;
+    }
+}
+
+.feeling {
+    margin-bottom: 6.5px;
+}
+
+.feeling__content,
+.moreno__content {
+    display: flex;
+    align-items: flex-end;
+}
+
+.person,
+.modernization,
+.photo {
+    display: none;
+}
+
+@media screen and (min-width: 480px) {
+    .main {
+        padding-left: 13px;
+        padding-right: 12px;
+    }
+
+    .tile {
+        width: 145px;
+        padding: 15px;
+
+        &--fullsize {
+            width: 300px;
+            flex-grow: 2;
+        }
+    }
+
+    .box {
+        order: 0;
+
+        &--green {
+            order: 6;
+        }
+
+        &__item {
+            width: 100%;
+        }
+    }
+
+
+
+    .square {
+        padding: 0;
+
+        &__content {
+            padding: 15px;
+        }
+    }
+
+    .thought {
+        margin-right: 10px;
+
+        &__text {
+            padding: 30px 46px 25px 25px;
+        }
+    }
+
+    .feeling {
+        margin-bottom: 10px;
+    }
+
+    .personal {
+        order: 1;
+    }
+
+    .abstract {
+        order: 2;
+    }
+
+    .introjection {
+        order: 3;
+    }
+
+    .conformism {
+        order: 4;
+    }
+
+    .personal2 {
+        order: 5;
+    }
+
+    .modernization {
+        display: block;
+        margin-bottom: 10px;
+
+        &__content {
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+
+    .person {
+        display: block;
+        flex-grow: 2;
+        margin-left: 10px;
+        width: 215px;
+    }
+
+    .description {
+        display: flex;
+        align-items: flex-end;
+        font-family: NotoSans;
+        font-size: 14px;
+        line-height: 19px;
+        margin: 0 0 30px;
+
+        &__term {
+            position: relative;
+            flex-grow: 1;
+            order: 1;
+            display: block;
+            overflow: hidden;
+
+            &::after {
+                content: '';
+                position: absolute;
+                margin-left: 10px;
+                bottom: 0.35em;
+                width: 100%;
+                border-bottom: 1px dotted;
+            }
+        }
+
+        &__detail {
+            order: 2;
+            text-align: right;
+            margin: 0;
+            padding-left: 10px;
+
+            &.reverse {
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0px;
+                    bottom: .35em;
+                    width: 20.4%;
+                    border-bottom: 1px dotted;
+                }
+            }
+        }
+    }
+
+    .photo {
+        display: block;
+        cursor: pointer;
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background: url(../images/cruiser.jpg) no-repeat 45% 75%;
+        }
+
+        &:hover::before {
+            box-shadow: inset 0 0 15px 4px rgba(0, 0, 0, 0.25);
+            filter: blur(5px);
+            transition: all 500ms;
+        }
+
+        &__content {
+            display: flex;
+            align-items: flex-end;
+            color: #fff;
+        }
+    }
+
+    .attention {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        box-sizing: border-box;
+        font-size: 36px;
+        line-height: 61px;
+        color: #F55E62;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 50%;
+        opacity: 0;
+        width: 61px;
+        height: 61px;
+
+        .photo:hover & {
+            opacity: 1;
+            transition: 250ms;
+        }
+    }
+
+    .leadership {
+        order: 7;
+    }
+
+    .however {
+        order: 8;
+    }
+
+    .genius {
+        order: 10;
+    }
+
+    .inflection {
+        order: 11;
+    }
+
+    .length {
+        order: 12;
+    }
+
+    /********* MessangerPage *********/
+
+    .messanger {
+        &__list {
+            max-height: 556px;
+        }
+    }
+}
+
+.messanger {
+    background: url(../images/girl.jpg) no-repeat center center / cover;
+    font-size: 14px;
+    line-height: 24px;
+    box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.15);
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        overflow-x: hidden;
+        padding: 40px 16px 10px;
+        max-height: 325px;
+    }
+
+    &__form {
+        border-top: 1px solid #DBDBDB;
+        padding: 20px 20px 30px;
+    }
+
+    // ie, firefox style
+    _:-ms-lang(x),
+    &__form {
+        margin-top: 30px;
+    }
+
+    _::-moz-range-track,
+    body:last-child &__form {
+        margin-top: 30px;
+    }
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+    &__picture {
+        flex-shrink: 0;
+        display: block;
+        overflow: hidden;
+        width: 47px;
+        height: 47px;
+        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    }
+
+    &__avatar {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        transform: scale(1.5);
+    }
+
+    // ie style
+    _:-ms-lang(x),
+    &__avatar {
+        height: auto;
+    }
+
+    &__text {
+        position: relative;
+        display: inline-flex;
+        background-color: #F1F3F5;
+        border-radius: 5px;
+        padding: 15px;
+        max-width: 470px;
+
+        &::before {
+            position: absolute;
+            top: 7px;
+            content: "";
+            border-top: 7px solid #F1F3F5;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+        }
+    }
+}
+
+[data-person^=first-user] {
+    align-self: flex-end;
+}
+
+[data-person^=second-user] {
+    align-self: flex-start;
+}
+
+[data-person^=first-user] .message__picture {
+    order: 2;
+}
+
+[data-person^=first-user] .message__text {
+    order: 1;
+    margin-right: 18px;
+
+    &::before {
+        left: 100%;
+        transform: translateX(-7px);
+    }
+}
+
+[data-person^=second-user] .message__picture {
+    margin-right: 18px;
+}
+
+[data-person^=second-user] .message__text {
+    &::before {
+        right: 100%;
+        transform: translateX(7px);
+    }
+}
+
+.date {
+    position: relative;
+    margin-bottom: 16px;
+    align-self: center;
+
+    &::before,
+    &::after {
+        position: absolute;
+        top: 50%;
+        content: "";
+        width: 400px;
+        height: 1px;
+        background-color: #fff;
+    }
+
+    &::before {
+        left: 120%;
+    }
+
+    &::after {
+        right: 120%;
+    }
+}
+
+.form {
+    &__message {
+        font-family: NotoSans;
+        color: #696969;
+        box-sizing: border-box;
+        border: 1px solid #DBDBDB;
+        border-radius: 4px;
+        outline-color: #0F54B9;
+        margin-bottom: 20px;
+        padding: 10px;
+        width: 100%;
+        height: 129px;
+    }
+
+    &__send {
+        font-family: ProximaNova;
+        font-size: 16px;
+        line-height: 1;
+        color: #fff;
+        background-color: #0F54B9;
+        border: none;
+        border-radius: 1.32em;
+        cursor: pointer;
+        padding: 0.63em 1.35em;
+
+        &:hover {
+            color: #0F54B9;
+            background-color: #fff;
+        }
+    }
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+    order: 9;
+}

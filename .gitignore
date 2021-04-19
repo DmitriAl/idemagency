@@ -1,0 +1,10 @@
+Thumbs.db
+.DS_Store
+*.log
+/distribution/
+secret/key
+/*.txt
+/node_modules/
+.*
+!.gitattributes
+!.gitignore
